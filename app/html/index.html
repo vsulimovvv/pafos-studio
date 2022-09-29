@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    @include('./components/base/_meta.html')
+    @include('./components/base/_links.html')
+
+    <title>Pafos Studio</title>
+  </head>
+
+  <body>
+    @include('./components/_popups.html')
+
+    <h1 class="visually-hidden">Главная</h1>
+
+    <div class="site-wrapper">
+      @include('./components/_header.html')
+
+      <main class="main">
+        @include('./components/_hero.html')
+        @include('./components/_video-preview.html')
+        @include('./components/_services.html')
+        @include('./components/_loyalty-card.html')
+        @include('./components/_works.html')
+        @include('./components/_safety.html')
+        @include('./components/_prices.html')
+        @include('./components/_price-list.html')
+        @include('./components/_interior.html')
+        @include('./components/_contacts.html')
+        @include('./components/_get-card.html')
+        @include('./components/_referral-program.html')
+        @include('./components/_applications.html')
+        @include('./components/_subscribe.html')
+      </main>
+      @include('./components/_footer.html')
+    </div>
+
+    @include('./components/base/_scripts.html')
+  </body>
+</html>
+
+<!-- <label class="checkbox">
+  <input class="checkbox__input" type="checkbox" required />
+  <span class="checkbox__box"></span>
+  <span class="checkbox__text">
+    Соглашаюсь с<a href="#"> обработкой персональных данных</a>
+  </span> 
+</label> -->
