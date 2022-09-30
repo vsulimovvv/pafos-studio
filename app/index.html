@@ -40,7 +40,7 @@
   </head>
 
   <body>
-    <div class="popup popup--service">
+    <div class="popup popup--online-booking">
   <div class="popup__container">
     <button class="popup__close" type="button" aria-label="Закрыть">
       <svg width="15" height="15">
@@ -48,141 +48,37 @@
       </svg>
     </button>
     <div class="popup__wrapper">
-      <h2 class="popup__title">Заявка на услугу “Испытательный комплекс”</h2>
+      <h2 class="popup__title">Онлайн запись</h2>
       <div class="popup__text">
         <p>Оставьте ваши данные и мы вам перезвоним.</p>
       </div>
 
-      <form class="request__form form-submit">
+      <form class="form-submit">
         <div class="form-submit__group">
-          <label class="form-submit__label" for="service-name">Имя</label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--name">
-            <input
-              class="form-submit__input"
-              name="name"
-              id="service-name"
-              type="text"
-              placeholder="Введите ваше имя"
-              required
-            />
-          </div>
+          <label class="form-submit__label" for="online-name">Имя</label>
+
+          <input
+            class="form-submit__input"
+            name="name"
+            id="online-name"
+            type="text"
+            placeholder="Введите ваше имя"
+            required
+          />
         </div>
         <div class="form-submit__group">
-          <label class="form-submit__label" for="service-tel">
+          <label class="form-submit__label" for="online-tel">
             Контактный телефон
           </label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
-            <input
-              class="form-submit__input"
-              name="tel"
-              id="service-tel"
-              type="tel"
-              placeholder="+7 (___) ___-__-__"
-              required
-            />
-          </div>
-        </div>
 
-        <button class="form-submit__btn btn" type="button">
-          Заказать звонок
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="popup popup--product">
-  <div class="popup__container">
-    <button class="popup__close" type="button" aria-label="Закрыть">
-      <svg width="15" height="15">
-        <use xlink:href="img/sprite.svg#close"></use>
-      </svg>
-    </button>
-    <div class="popup__wrapper">
-      <h2 class="popup__title">Заказ насоса ДГН СЕРИЯ</h2>
-      <div class="popup__text">
-        <p>Оставьте ваши данные и мы вам перезвоним.</p>
-      </div>
-
-      <form class="request__form form-submit">
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="product-name">Имя</label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--name">
-            <input
-              class="form-submit__input"
-              name="name"
-              id="product-name"
-              type="text"
-              placeholder="Введите ваше имя"
-              required
-            />
-          </div>
-        </div>
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="product-tel">
-            Контактный телефон
-          </label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
-            <input
-              class="form-submit__input"
-              name="tel"
-              id="product-tel"
-              type="tel"
-              placeholder="+7 (___) ___-__-__"
-              required
-            />
-          </div>
-        </div>
-
-        <button class="form-submit__btn btn" type="button">
-          Заказать звонок
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="popup popup--consultation">
-  <div class="popup__container">
-    <button class="popup__close" type="button" aria-label="Закрыть">
-      <svg width="15" height="15">
-        <use xlink:href="img/sprite.svg#close"></use>
-      </svg>
-    </button>
-    <div class="popup__wrapper">
-      <h2 class="popup__title">Заказать консультацию</h2>
-      <div class="popup__text">
-        <p>Оставьте ваши данные и мы вам перезвоним.</p>
-      </div>
-
-      <form class="request__form form-submit">
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="consultation-name">Имя</label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--name">
-            <input
-              class="form-submit__input"
-              name="name"
-              id="consultation-name"
-              type="text"
-              placeholder="Введите ваше имя"
-              required
-            />
-          </div>
-        </div>
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="consultation-tel">
-            Контактный телефон
-          </label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
-            <input
-              class="form-submit__input"
-              name="tel"
-              id="consultation-tel"
-              type="tel"
-              placeholder="+7 (___) ___-__-__"
-              required
-            />
-          </div>
+          <input
+            class="form-submit__input"
+            name="tel"
+            id="online-tel"
+            type="tel"
+            placeholder="+7 (___) ___-__-__"
+            required
+          />
         </div>
 
         <button class="form-submit__btn btn" type="button">
@@ -266,7 +162,7 @@
       <div class="header__right">
         <a class="header__phone" href="tel:74994990917"> +7 (499) 499 09 17 </a>
 
-        <button class="header__btn btn" type="button">Онлайн запись</button>
+        <button class="header__btn btn online-booking-btn" type="button">Онлайн запись</button>
 
         <button class="header__toggle" type="button" aria-label="Открыть меню">
           <span class="header__toggle-line"></span>
@@ -290,10 +186,16 @@
         открыты. Всегда расскажем, объясним, поможем.
       </p>
       <div class="hero__btns">
-        <button class="hero__btn btn btn--light" type="button">
+        <button
+          class="hero__btn btn btn--light online-booking-btn"
+          type="button"
+        >
           Оставить заявку
         </button>
-        <button class="hero__btn btn btn--transparent" type="button">
+        <button
+          class="hero__btn btn btn--transparent online-booking-btn"
+          type="button"
+        >
           Записаться онлайн
         </button>
       </div>
@@ -368,7 +270,7 @@
     </ul>
 
     <div class="services__bottom">
-      <button class="services-item__btn btn" type="button">Прайс - лист</button>
+      <a class="services-item__btn btn" href="#prices">Прайс - лист</a>
     </div>
   </div>
 </section>
@@ -494,7 +396,9 @@
 
     <div class="works__bottom">
       <a class="works__btn btn" href="#">Записаться В WhatsApp</a>
-      <button class="works__btn btn btn--white">Записаться онлайн</button>
+      <button class="works__btn btn btn--white online-booking-btn">
+        Записаться онлайн
+      </button>
     </div>
   </div>
 </section>
@@ -541,7 +445,7 @@
   </div>
 </section>
 
-        <section class="prices">
+        <section class="prices" id="prices">
   <div class="container">
     <div class="prices__top">
       <h2 class="prices__title">Наши цены</h2>
@@ -1648,7 +1552,7 @@
         <li class="contacts-box__item">• Женская позитивная атмосфера</li>
       </ul>
 
-      <button class="contacts-box__btn btn" type="button">
+      <button class="contacts-box__btn btn online-booking-btn" type="button">
         Оставить заявку
       </button>
     </div>
@@ -1692,7 +1596,7 @@
         <li class="contacts-box__item">• Женская позитивная атмосфера</li>
       </ul>
 
-      <button class="contacts-box__btn btn" type="button">
+      <button class="contacts-box__btn btn online-booking-btn" type="button">
         Оставить заявку
       </button>
     </div>
