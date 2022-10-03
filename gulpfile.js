@@ -38,7 +38,7 @@ function svgSprites() {
         },
       })
     )
-    .pipe(dest('src/images'));
+    .pipe(dest('src/img'));
 }
 
 function fileInclude() {
