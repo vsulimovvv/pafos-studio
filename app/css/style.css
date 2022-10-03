@@ -1844,16 +1844,8 @@ body.no-scroll {
 }
 
 .services {
-  padding-top: 80px;
+  padding-top: 130px;
   padding-bottom: 80px;
-}
-@media (max-width: 1270px) {
-  .services {
-    padding-top: calc(
-        50px + 30 *
-          ((100vw - 360px) / 910)
-      );
-  }
 }
 @media (max-width: 1270px) {
   .services {
