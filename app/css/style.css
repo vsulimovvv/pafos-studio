@@ -376,6 +376,12 @@ body.no-scroll {
   }
 }
 
+@media (max-width: 576px) {
+  .fancybox-content {
+    height: 450px !important;
+  }
+}
+
 @-webkit-keyframes opacity-visibility {
   0% {
     opacity: 0;
