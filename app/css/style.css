@@ -1598,7 +1598,7 @@ body.no-scroll {
       );
   }
 }
-.contacts .contacts-box__whatsapp {
+.contacts .contacts-box__whatsapp, .contacts .contacts-box__telegram {
   width: 38px;
   height: 38px;
   background-color: var(--color-accent);
@@ -1606,13 +1606,32 @@ body.no-scroll {
   -webkit-transition: 300ms ease;
   -o-transition: 300ms ease;
   transition: 300ms ease;
+}
+.contacts .contacts-box__whatsapp:hover, .contacts .contacts-box__telegram:hover {
+  opacity: 0.8;
+}
+.contacts .contacts-box__whatsapp {
   background-image: url("../img/whatsapp.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
 }
-.contacts .contacts-box__whatsapp:hover {
-  opacity: 0.8;
+.contacts .contacts-box__telegram {
+  position: relative;
+}
+.contacts .contacts-box__telegram::after {
+  position: absolute;
+  content: "";
+  background-color: var(--color-white);
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-mask: url("../img/socials/telegram.svg") no-repeat center/contain;
+          mask: url("../img/socials/telegram.svg") no-repeat center/contain;
 }
 .contacts .contacts-box__name {
   font-family: "Forum";
