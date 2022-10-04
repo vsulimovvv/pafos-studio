@@ -88,6 +88,20 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  //* Close menu after click on Links
+  (function closeMenuAfterClickOnLinks() {
+    const menuLinks = document.querySelectorAll('.mobile-menu__link');
+    const body = document.querySelector('body');
+
+    function linkAction() {
+      document.querySelector('.mobile-menu').classList.remove('active');
+      document.querySelector('.header__toggle').classList.remove('active');
+      document.querySelector('.overlay').classList.remove('active');
+      body.classList.remove('no-scroll');
+    }
+    menuLinks.forEach((ml) => ml.addEventListener('click', linkAction));
+  })();
+
   // * ===== Modal
   (function modals() {
     function bindModal(openBtn, modal, close) {
