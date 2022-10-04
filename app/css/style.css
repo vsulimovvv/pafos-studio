@@ -2129,6 +2129,7 @@ body.no-scroll {
 }
 
 .works-card {
+  cursor: pointer;
   display: block;
   -webkit-transition: 500ms ease;
   -o-transition: 500ms ease;
