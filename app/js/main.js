@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
       pagination: {
         el: '.swiper-pagination',
       },
+      loop: true,
       slidesPerView: 'auto',
       spaceBetween: 20,
       navigation: {
@@ -28,8 +29,9 @@ window.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 'auto',
       centeredSlides: true,
       slideToClickedSlide: true,
-      initialSlide: 4,
+      // initialSlide: 13,
       spaceBetween: 20,
+      loop: true,
       navigation: {
         nextEl: '.price-list-top__slider .swiper-button-next',
         prevEl: '.price-list-top__slider .swiper-button-prev',
@@ -178,54 +180,85 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   someTabs('.contacts', '.contacts-top__item', '.contacts__content', 'active');
 
-  function toggleTabs(
-    headerSelector,
-    tabSelector,
-    contentSelector,
-    activeClass
-  ) {
-    const header = document.querySelectorAll(headerSelector);
-    const tab = document.querySelectorAll(tabSelector);
-    const content = document.querySelectorAll(contentSelector);
+  // function toggleTabs(
+  //   headerSelector,
+  //   tabSelector,
+  //   contentSelector,
+  //   activeClass
+  // ) {
+  //   const header = document.querySelectorAll(headerSelector);
+  //   const tab = document.querySelectorAll(tabSelector);
+  //   const content = document.querySelectorAll(contentSelector);
 
-    header.forEach((el) => {
+  //   header.forEach((el) => {
+  //     if (el) {
+  //       hideTabContent();
+  //       showTabContent();
+  //       function hideTabContent() {
+  //         content.forEach((item) => {
+  //           item.classList.remove('active');
+  //         });
+  //         tab.forEach((item) => {
+  //           item.classList.remove(activeClass);
+  //         });
+  //       }
+  //       function showTabContent(i = 4) {
+  //         content[i].classList.add('active');
+  //         tab[i].classList.add(activeClass);
+  //       }
+  //       header.forEach((item) => {
+  //         if (item) {
+  //           item.addEventListener('click', (e) => {
+  //             const target = e.target;
+  //             if (target.classList.contains(tabSelector.replace(/\./, ''))) {
+  //               tab.forEach((item, i) => {
+  //                 if (target == item || target.parentNode == item) {
+  //                   hideTabContent();
+  //                   showTabContent(i);
+  //                 }
+  //               });
+  //             }
+  //           });
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
+  // toggleTabs(
+  //   '.price-list',
+  //   '.price-list-top__btn',
+  //   '.price-list__content',
+  //   'active'
+  // );
+
+  (function tab() {
+    let tabNav = document.querySelectorAll('.price-list-top__btn'),
+      tabContent = document.querySelectorAll('.price-list__content'),
+      tabName;
+
+    tabContent.forEach((el) => {
       if (el) {
-        hideTabContent();
-        showTabContent();
-        function hideTabContent() {
-          content.forEach((item) => {
+        tabNav.forEach((item) => {
+          item.addEventListener('click', selectTabNav);
+        });
+
+        function selectTabNav() {
+          tabNav.forEach((item) => {
             item.classList.remove('active');
           });
-          tab.forEach((item) => {
-            item.classList.remove(activeClass);
+          this.classList.add('active');
+          tabName = this.getAttribute('data-tab-name');
+          selectTabContent(tabName);
+        }
+
+        function selectTabContent(tabName) {
+          tabContent.forEach((item) => {
+            item.classList.contains(tabName)
+              ? item.classList.add('active')
+              : item.classList.remove('active');
           });
         }
-        function showTabContent(i = 4) {
-          content[i].classList.add('active');
-          tab[i].classList.add(activeClass);
-        }
-        header.forEach((item) => {
-          if (item) {
-            item.addEventListener('click', (e) => {
-              const target = e.target;
-              if (target.classList.contains(tabSelector.replace(/\./, ''))) {
-                tab.forEach((item, i) => {
-                  if (target == item || target.parentNode == item) {
-                    hideTabContent();
-                    showTabContent(i);
-                  }
-                });
-              }
-            });
-          }
-        });
       }
     });
-  }
-  toggleTabs(
-    '.price-list',
-    '.price-list-top__btn',
-    '.price-list__content',
-    'active'
-  );
+  })();
 });
